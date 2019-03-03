@@ -6,6 +6,8 @@ body {
   ); */
   background: #DDD;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 textarea {
@@ -23,4 +25,15 @@ textarea {
   font-weight: bold;
   text-transform: uppercase;
   font-style: italic;
+}
+
+.Footer {
+  background: #212529;
+  color: #fff;
+  text-align: center;
+  margin-top: auto;
+  line-height: 4;
+}
+.Footer__container {
+  margin: 0;
 }
