@@ -4,10 +4,12 @@ const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')('_method')
 const expresSession = require('express-session')
 const flash = require('connect-flash')
+const passport = require('passport')
 
 // Initiliazations
 const app = express()
 require('./dabatase')
+require('./config/passport')
 const port = (process.env.PORT || 3000)
 const viewDir = `${__dirname}/views`
 const publicDir = express.static(`${__dirname}/public`)
@@ -33,12 +35,15 @@ app
     saveUninitialized: true,
     resave: true
   }))
+  .use(passport.initialize())
+  .use(passport.session())
   .use(flash())
 
 // Global Variables
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg')
   res.locals.error_msg = req.flash('error_msg')
+  res.locals.error = req.flash('error')
   next()
 })
 
