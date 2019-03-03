@@ -1,0 +1,26 @@
+body {
+  /* background: linear-gradient(
+    to right,
+    #2B32B2,
+    #14BBCC
+  ); */
+  background: #DDD;
+  min-height: 100vh;
+}
+
+textarea {
+  resize: none;
+}
+
+.Note__title {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: #444;
+}
+
+.Note__button{
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
+}
